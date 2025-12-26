@@ -11,8 +11,8 @@ print("OPENAI_API_KEY:", os.getenv("OPENAI_API_KEY"))
 
 load_dotenv()
  
-AGENT_MODEL = "gemini-2.0-flash-lite"
-# AGENT_MODEL = "gpt-4o-mini"
+# AGENT_MODEL = "gemini-2.0-flash-lite"
+AGENT_MODEL = "gpt-4o-mini"
 
 
 def get_menu_item(menu: str) -> dict:
@@ -102,7 +102,7 @@ session_service = InMemorySessionService()
 
 APP_NAME = "Inventory_agent"
 root_agent = Agent(
-    model=AGENT_MODEL,
+    model=LiteLlm(model=AGENT_MODEL),
     name="Inventory_agent",
     description="Provides inventory info about a menu item",
     instruction="""You are the Smart POS Inventory Assistant. 
