@@ -1,4 +1,4 @@
 google-adk
 python-dotenv
-fast-api
+fastapi
 litellm
